@@ -2,7 +2,6 @@ const express = require("express"),
   path = require("path"),
   cors = require("cors"),
   socketIO = require("socket.io"),
-  { v4: uuidv4 } = require("uuid"),
   bodyParser = require("body-parser"),
   mongoose = require("mongoose");
 require("dotenv").config();
@@ -19,7 +18,10 @@ global.ROOMS = Rooms;
 
 async function main() {
   await mongoose
-    .connect("mongodb://localhost:27017/multiplayer-pixelart")
+    .connect(
+      process.env.MONGODB_URL ||
+        "mongodb://localhost:27017/multiplayer-pixelart"
+    )
     .then(loadRooms);
 }
 
