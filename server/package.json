@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "_start": "cd .. && cd app && npm run build && cd .. && cd server && npm run production",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "production": "node index.js"
+  },
+  "watch": [
+    ".env"
+  ],
+  "ignore": [
+    "build/*"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "array-keyed-map": "^2.1.2",
+    "body-parser": "^1.19.0",
+    "buffer": "^6.0.3",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "moment": "^2.29.1",
+    "mongoose": "^6.0.4",
+    "path": "^0.12.7",
+    "socket.io": "^4.1.3",
+    "uuid": "^8.3.2",
+    "validator": "^13.6.0"
+  }
+}
