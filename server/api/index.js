@@ -1,9 +1,9 @@
-const express = require("express");
-const utils = require("../utils");
-const Room = require("../lib/Room");
-const validator = require("validator");
+const express = require("express"),
+  router = express.Router(),
+  validator = require("validator");
 
-const router = express.Router();
+const utils = require("../utils"),
+  Room = require("../lib/Room");
 
 router
   .get("/get-environment-vars", (req, res) => {
