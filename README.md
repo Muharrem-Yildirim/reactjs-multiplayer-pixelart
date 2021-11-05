@@ -1,6 +1,6 @@
 # reactjs-multiplayer-pixelart
 
-<p>Session based multiplayer pixel art application on web. Available at: <a href="https://reactjs-multiplayer-pixelart.herokuapp.com/">https://reactjs-multiplayer-pixelart.herokuapp.com</a></p>
+<p>Session based multiplayer pixel art application on web. Made with React.js, Node.js, SASS, Socket.io and MongoDB. Available at: <a href="https://reactjs-multiplayer-pixelart.herokuapp.com/">https://reactjs-multiplayer-pixelart.herokuapp.com</a></p>
 
 <table>
   <tr>
