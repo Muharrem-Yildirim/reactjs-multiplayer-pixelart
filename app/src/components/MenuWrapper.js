@@ -27,9 +27,3 @@ const FinalComponent = (props) => (
 );
 
 export default FinalComponent;
-
-/* 
-
-WITHOUT THIS MENU'S ANIMATION IS BUGGY 
-
-*/

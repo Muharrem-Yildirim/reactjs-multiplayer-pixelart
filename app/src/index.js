@@ -6,17 +6,10 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { SnackbarProvider } from "material-ui-snackbar-provider";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { createTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
 
-const theme = createTheme({
-  // palette: {
-  //   type: "dark",
-  // },
-});
-
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
+  <ThemeProvider>
     <Provider store={store}>
       <SnackbarProvider
         SnackbarProps={{

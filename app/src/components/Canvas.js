@@ -11,31 +11,12 @@ import PlaceHolder from "./PlaceHolder";
 const ArrayKeyedMap = require("array-keyed-map");
 
 const PaintingArea = styled.canvas`
-  /* border: 10px solid #000000; */
   margin: 0;
   padding: 0;
   position: relative;
   image-rendering: pixelated;
   display: block;
-  /* 
-  &::before {
-    content: "";
-    position: absolute;
-    border-style: solid;
-    border-width: 0 16px 16px;
-    border-color: red transparent;
-    display: block;
-    width: 0;
-    z-index: 1;
-    margin-left: -16px;
-    top: -16px;
-    left: 50%;
-  } */
 `;
-
-// const CanvasBorder = styled.div`
-//   border: 10px solid #000000;
-// `;
 
 const CanvasWrapper = styled.div`
   height: 100vh;
@@ -43,8 +24,6 @@ const CanvasWrapper = styled.div`
   display: block;
   cursor: crosshair;
 `;
-
-// eslint-disable-next-line no-unused-vars
 
 class Canvas extends Component {
   constructor(props) {
@@ -93,13 +72,9 @@ class Canvas extends Component {
 
     map = new ArrayKeyedMap(map);
 
-    // this.setState({ ...this.state, mapCache: map });
-
-    // setTimeout(() => {
     map.forEach(async ({ color }, key) => {
       this.changePixel(color, key);
     });
-    // }, 500);
   };
 
   loadMapFromAPI = (room) => {
@@ -130,14 +105,6 @@ class Canvas extends Component {
     let { x, y, color } = data;
 
     this.changePixel(color, [x, y]);
-
-    // this.canvasContext.fillStyle = color;
-    // this.canvasContext.fillRect(
-    //   x,
-    //   y,
-    //   store.getState().sharedEnv.pixelSize,
-    //   store.getState().sharedEnv.pixelSize
-    // );
   };
 
   componentDidMount() {
@@ -417,24 +384,11 @@ class Canvas extends Component {
               "px," +
               this.state.lastCoord.mY +
               "px)",
-            // transform:
-            // "translate(" +
-            // this.state.lastCoord.mX +
-            // "px," +
-            // this.state.lastCoord.mY +
-            // "px) scale(" +
-            // this.state.lastCoord.scale +
-            // ")",
           }}
-          // onClick={(e) => {
-          //   e.preventDefault();
-          //   e.stopPropagation();
-          // }}
         />
         <PaintingArea
           ref={this.canvas}
           onMouseMove={this.onMouseMove}
-          // onWheel={this.onMouseWheel}
           width={this.props.sharedEnv.canvasSize.width || 0}
           height={this.props.sharedEnv.canvasSize.height || 0}
         ></PaintingArea>

@@ -1,6 +1,6 @@
 import { createStore } from "redux";
 
-function main(
+function store(
   state = {
     color: "#ff0000",
     pos: {
@@ -39,4 +39,4 @@ function main(
   }
 }
 
-export default createStore(main);
+export default createStore(store);
